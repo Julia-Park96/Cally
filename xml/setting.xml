@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:key="mainPreference">
+    <PreferenceCategory
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:title="설정"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:key="find_friend"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="친구 추가"
+            android:dialogTitle="친구의 이메일을 입력해주세요."
+            android:summary="이메일로 친구 추가"
+            android:positiveButtonText="추가"
+            android:negativeButtonText="취소"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="logout"
+            app:defaultValue="false"
+            android:title="로그아웃"
+            app:iconSpaceReserved="false">
+        </Preference>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/ivCalendarClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close" />
+
+    <ImageView
+        android:id="@+id/ivCalendarSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/check" />
+
+
+    <EditText
+        android:id="@+id/edtScheduleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="일정 이름"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvScheduleDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvScheduleDate" />
+
+    <TextView
+        android:id="@+id/tvStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="일정 시작일"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/edtScheduleTitle"
+        app:layout_constraintTop_toBottomOf="@+id/edtScheduleTitle" />
+
+    <TextView
+        android:id="@+id/tvEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:text="일정 종료일"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+
+    <EditText
+        android:id="@+id/edtScheduleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="일정 상세"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/edtScheduleTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvStartDate" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="~"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStartDate"
+        app:layout_constraintStart_toEndOf="@+id/tvStartDate"
+        app:layout_constraintTop_toTopOf="@+id/tvStartDate" />
+
+    <Switch
+        android:id="@+id/swRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="15dp"
+        android:text="반복"
+        app:layout_constraintBottom_toTopOf="@id/rgRepeatCycle"
+        app:layout_constraintStart_toStartOf="@+id/edtScheduleDetail"
+        app:layout_constraintTop_toBottomOf="@+id/edtScheduleDetail"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <RadioGroup
+        android:id="@+id/rgRepeatCycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/swRepeat">
+
+        <RadioButton
+            android:id="@+id/rbEveryDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="매일" />
+
+        <RadioButton
+            android:id="@+id/rbEveryWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="매주" />
+
+        <RadioButton
+            android:id="@+id/rbEveryMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="매달" />
+
+        <RadioButton
+            android:id="@+id/rbGetText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="직접입력(일): " />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edtRepeatDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/rgRepeatCycle"
+        app:layout_constraintStart_toEndOf="@+id/rgRepeatCycle" />
+
+    <LinearLayout
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/swRepeat"
+        app:layout_constraintStart_toEndOf="@+id/swRepeat"
+        app:layout_constraintTop_toBottomOf="@+id/edtScheduleDetail">
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/add_circle"
+            app:tint="@color/purple_200" />
+
+        <TextView
+            android:id="@+id/tvShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="공유하기"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="일정 추가"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCalendarClose"
+        app:layout_constraintEnd_toStartOf="@+id/ivCalendarSave"
+        app:layout_constraintStart_toEndOf="@+id/ivCalendarClose"
+        app:layout_constraintTop_toTopOf="@+id/ivCalendarClose" />
+
+    <TextView
+        android:id="@+id/tvScheduleDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="일자"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCalendarClose" />
+</androidx.constraintlayout.widget.ConstraintLayout>
